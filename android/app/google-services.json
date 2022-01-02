@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "703184509017",
+    "project_id": "loof-auth-dab86",
+    "storage_bucket": "loof-auth-dab86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703184509017:android:af4730fa00c42a0933f948",
+        "android_client_info": {
+          "package_name": "com.loof"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703184509017-8ndviq6s3ks2fkco8dukj3k8ci0l8jri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqY3yyVGJfnVWt-MYIhuezi-idEM3O7HU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703184509017-8ndviq6s3ks2fkco8dukj3k8ci0l8jri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
