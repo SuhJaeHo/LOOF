@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Dimensions, TextInput, TouchableOpacity, Linking } from 'react-native';
 
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import auth, { firebase } from "@react-native-firebase/auth";
 
 import { GOOGLE_WEB_CLIENT_ID } from '@env';
 
 import styles from './styles';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');    
 
@@ -19,7 +20,13 @@ const LoginScreen = () => {
 
     signIn = async() => {
         try {
-            const userInfo = await GoogleSignin.signIn();
+            const user = await GoogleSignin.signIn();   
+            
+            if(user.idToken !== null) {
+                navigation.navigate('Main');
+            }else {
+                
+            }
         } catch(error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                 
