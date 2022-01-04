@@ -1,8 +1,9 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
-    headerPressable: {
-        
+    map: {
+        width: '100%',
+        height: '100%',
     }
 })
 
