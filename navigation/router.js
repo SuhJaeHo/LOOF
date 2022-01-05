@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Splash from '../src/Auth/Splash';
 import LoginScreen from '../src/Auth/Login';
 import MainScreen from '../src/Main';
+import LocationSearchScreen from '../src/LocationSearch';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,11 @@ const Router = () => {
                 <Stack.Screen 
                     name="Main"
                     component={MainScreen}
+                    options={{headerShown: false}}                 
+                />
+                <Stack.Screen 
+                    name="LocationSearch"
+                    component={LocationSearchScreen}
                     options={{headerShown: false}}                 
                 />
             </Stack.Navigator>
