@@ -53,8 +53,9 @@ const MainScreen = ({ navigation }) => {
                 getCurrentLocation={() => getCurrentLocation()}   
             />
             <TouchableOpacity
-                style={styles.headerPressable}                                 
+                style={styles.headerPressable}                 
                 activeOpacity={0.9}              
+                onPress={() => navigation.navigate('LocationSearch', {latitude: region.latitude, longitude: region.longitude})}                 
             >
                 <Text style={styles.headerText}>{address}</Text>
             </TouchableOpacity>           
