@@ -9,24 +9,25 @@ import styles from './styles';
 
 import { GOOGLE_WEB_CLIENT_ID, GOOGLE_CLOUD_PLATFORM_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET } from '@env';
 
-const MainScreen = ({ navigation }) => {
+const MainScreen = ({ route, navigation }) => {
     const [region, setRegion] = useState({
         latitude: 37.49783315274643, 
         longitude: 127.02783092726877,
         latitudeDelta: 0.015,
         longitudeDelta: 0.0121,
-    });
-
-    const [address, setAddress] = useState('');  
+    });    
+    const [address, setAddress] = useState('');           
 
     useEffect(() => {
-        Geocoder.init(GOOGLE_CLOUD_PLATFORM_API_KEY, {language : "ko"});                    
+        Geocoder.init(GOOGLE_CLOUD_PLATFORM_API_KEY, {language : "ko"});            
     }, [])
 
     getCurrentLocation = () => {
         Geolocation.getCurrentPosition((position => {            
             setRegion({latitude: position.coords.latitude, longitude: position.coords.longitude, latitudeDelta: 0.015, longitudeDelta: 0.0121})
-        }), error => console.log(error), {enableHighAccuracy: true});
+        }), error => console.log(error));
+
+        console.log('순서');
     }
 
     onRegionChange = (reg) => {
@@ -65,31 +66,3 @@ const MainScreen = ({ navigation }) => {
 
 export default MainScreen;
 
-
-
-/*
-    geocode = async() => {            
-        fetch("https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=" + region.longitude + "," + region.latitude + "&sourcecrs=epsg:4326&orders=roadaddr&output=json", {
-            headers: {
-                "X-NCP-APIGW-API-KEY-ID": NAVER_CLIENT_ID,
-                "X-NCP-APIGW-API-KEY": NAVER_CLIENT_SECRET
-            }
-        })
-        .then(response => response.json())
-        .then(response => {      
-            let address;              
-            console.log(response);
-            console.log(response.results[0]);
-            console.log(response.results[0].region);
-
-            if(response.results[0].land.addition0.value === '') {
-                address = response.results[0].region.area1.name + ' ' + response.results[0].region.area2.name + ' ' + response.results[0].region.area3.name + ' ' + response.results[0].land.name;
-            }else {
-                address = response.results[0].region.area1.name + ' ' + response.results[0].region.area2.name + ' ' + response.results[0].region.area3.name + ' ' + response.results[0].land.addition0.value;                           
-            }
-            
-            
-            console.log(address);   
-        })      
-    }
-*/
