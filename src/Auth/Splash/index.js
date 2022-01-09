@@ -12,7 +12,7 @@ const Splash = ({ navigation }) => {
         const isSignedIn = await GoogleSignin.isSignedIn();
                 
         if(isSignedIn) {  
-            navigation.replace('Main');          
+            navigation.replace('Main', {data: undefined});          
         }else {
             navigation.replace('Login');
         }        

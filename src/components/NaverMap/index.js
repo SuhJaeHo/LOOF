@@ -12,7 +12,7 @@ const NaverMap = (props) => {
                 style={styles.map}
                 center={props.region}      
                 //처음에 onCameraChange 이벤트 실행 시 계속해서 서울 시청 주소를 불러와서 NaverMapView에 내장되어 있는 onInitialized 함수를 사용하여 
-                //현재 위치를 불러오하는 함수인 getCurrentLocation()을 호출하였다
+                //현재 위치를 불러오는 함수인 getCurrentLocation()을 호출하였다
                 onInitialized={() => props.getCurrentLocation()}
                 onCameraChange={e => props.onRegionChange(e)}                        
                 onMapClick={e => props.onRegionChange(e)}                        
