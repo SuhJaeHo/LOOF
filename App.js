@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
 
 import SplashScreen from "react-native-splash-screen";
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './slices';
 
 import Router from './navigation/router';
 
-const store = createStore(rootReducer);
+const store = configureStore({reducer: rootReducer});
 
 const App = () => {  
   useEffect(() => {
@@ -20,9 +19,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <>
-        <Router />
-      </>
+        <Router />      
     </Provider>
   );
 };

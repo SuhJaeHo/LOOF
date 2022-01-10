@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: '#fff',                
         top: 8,
-        left: Dimensions.get('window').width * 0.05,         
+        left: Dimensions.get('window').width * 0.05,                 
         position: 'absolute',
         shadowColor: "#000",
         shadowOffset: {
@@ -17,12 +17,17 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.36,
         shadowRadius: 6.68,
         elevation: 11,   
-        justifyContent: 'center',
+        flexDirection: 'row',        
         alignItems: 'center',               
     },
     headerText: {
         fontSize: 16,
-        color: 'black',        
+        color: 'black',                           
+    },
+    menuButtom: {
+        position: 'absolute',
+        zIndex: 3,
+        marginLeft: 16,
     }
 })
 

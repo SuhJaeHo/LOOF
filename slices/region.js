@@ -13,11 +13,11 @@ const regionSlice = createSlice({
     name: 'region',
     initialState,
     reducers: {
-        updateBy(state, action) {
-            state.region = action.payload;            
-        }
+        updateByRegion(state, action) {
+            state.region = action.payload;          
+        }          
     }
 })
 
-export const { updateBy } = regionSlice.actions;
+export const { updateByRegion } = regionSlice.actions;
 export default regionSlice.reducer;

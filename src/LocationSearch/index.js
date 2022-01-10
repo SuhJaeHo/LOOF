@@ -9,19 +9,19 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import { updateBy } from '../../slices/region';
 import { useDispatch } from 'react-redux';
+import { updateByRegion } from '../../slices/region';
+import { updateByAddress } from '../../slices/address';
 
 import styles from './styles';
 
 import { GOOGLE_CLOUD_PLATFORM_API_KEY, KAKAO_RESTAPI_KEY } from '@env';
 
 const LocationSearchScreen = ({ route, navigation }) => {            
-    const [text, setText] = useState('');    
-    const [results, setResults] = useState(''); 
-
     const dispatch = useDispatch();
-    
+
+    const [text, setText] = useState('');    
+    const [results, setResults] = useState('');     
     const { latitude, longitude } = route.params;
 
     const searchPlaces = (value) => {
@@ -58,9 +58,8 @@ const LocationSearchScreen = ({ route, navigation }) => {
                 renderItem={({item}) => {
                     return (
                         <Pressable 
-                            style={styles.searchListContainer}
-                            //navigation.push를 사용해야 메인에서 params를 잘 받아오는데 이유가 뭘까?
-                            onPress={() => navigation.navigate({name: 'Main'}, dispatch(updateBy({latitude: parseFloat(item.y), longitude: parseFloat(item.x), latitudeDelta: 0.015, longitudeDelta: 0.0121})))}
+                            style={styles.searchListContainer}                            
+                            onPress={() => navigation.navigate({name: 'DrawerNav'}, dispatch(updateByRegion({latitude: parseFloat(item.y), longitude: parseFloat(item.x), latitudeDelta: 0.015, longitudeDelta: 0.0121}), dispatch(updateByAddress(item.place_name))))}
                         >
                             <View style={{flex: 0.9}}>
                                 <View style={{flexDirection: 'row'}}>
@@ -92,7 +91,7 @@ const LocationSearchScreen = ({ route, navigation }) => {
         <View style={{flex: 1, backgroundColor: '#fff'}}>     
             <View style={{flexDirection: 'row', alignItems: 'center', paddingLeft: 20}}>
                 <Pressable
-                    onPress={() => navigation.navigate('Main')}
+                    onPress={() => navigation.navigate('DrawerNav')}
                 >
                     <AntDesign name={'arrowleft'} size={30} style={{color: '#383636'}}/>
                 </Pressable>            

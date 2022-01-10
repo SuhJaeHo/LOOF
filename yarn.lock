@@ -1285,6 +1285,14 @@
     query-string "^6.13.6"
     react-is "^16.13.0"
 
+"@react-navigation/drawer@^5.x":
+  version "5.12.9"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-5.12.9.tgz#b07d7391a6fea4ce07cd7a7421fdbaea37cdbb46"
+  integrity sha512-SYb2BCEAn+BiEwC6WBfCzs1VlWD+ZdQbxmsim6vo1o+ndPW2e+kiq7FXKRs0vUXhQRZVl2oOB3vBn0c3YCllQg==
+  dependencies:
+    color "^3.1.3"
+    react-native-iphone-x-helper "^1.3.0"
+
 "@react-navigation/native@5.9.8":
   version "5.9.8"
   resolved "https://registry.npmjs.org/@react-navigation/native/-/native-5.9.8.tgz"
@@ -1311,7 +1319,7 @@
 
 "@reduxjs/toolkit@1.7.1":
   version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.7.1.tgz#994962aeb7df3c77be343dd2ad1aa48221dbaa0c"
+  resolved "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.7.1.tgz"
   integrity sha512-wXwXYjBVz/ItxB7SMzEAMmEE/FBiY1ze18N+VVVX7NtVbRUrdOGKhpQMHivIJfkbJvSdLUU923a/yAagJQzY0Q==
   dependencies:
     immer "^9.0.7"
@@ -1477,17 +1485,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@7.1.21":
-  version "7.1.21"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.21.tgz#f32bbaf7cbc4b93f51e10d340aa54035c084b186"
-  integrity sha512-bLdglUiBSQNzWVVbmNPKGYYjrzp3/YDPwfOH3nLEz99I4awLlaRAPWjo6bZ2POpxztFWtDDXIPxBLVykXqBt+w==
-  dependencies:
-    "@types/hoist-non-react-statics" "^3.3.0"
-    "@types/react" "*"
-    hoist-non-react-statics "^3.3.0"
-    redux "^4.0.0"
-
-"@types/react-redux@^7.1.20":
+"@types/react-redux@7.1.21", "@types/react-redux@^7.1.20":
   version "7.1.21"
   resolved "https://registry.npmjs.org/@types/react-redux/-/react-redux-7.1.21.tgz"
   integrity sha512-bLdglUiBSQNzWVVbmNPKGYYjrzp3/YDPwfOH3nLEz99I4awLlaRAPWjo6bZ2POpxztFWtDDXIPxBLVykXqBt+w==
@@ -3786,7 +3784,7 @@ image-size@^0.6.0:
 
 immer@^9.0.7:
   version "9.0.7"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.7.tgz#b6156bd7db55db7abc73fd2fdadf4e579a701075"
+  resolved "https://registry.npmjs.org/immer/-/immer-9.0.7.tgz"
   integrity sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==
 
 import-fresh@^2.0.0:
@@ -6444,7 +6442,7 @@ require-main-filename@^2.0.0:
 
 reselect@^4.1.5:
   version "4.1.5"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.1.5.tgz#852c361247198da6756d07d9296c2b51eddb79f6"
+  resolved "https://registry.npmjs.org/reselect/-/reselect-4.1.5.tgz"
   integrity sha512-uVdlz8J7OO+ASpBYoz1Zypgx0KasCY20H+N8JD13oUMtPvSHQuscrHop4KbXrbsBcdB9Ds7lVK7eRkBIfO43vQ==
 
 resolve-cwd@^3.0.0:

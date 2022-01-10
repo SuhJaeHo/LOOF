@@ -23,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
             const user = await GoogleSignin.signIn();   
             
             if(user.idToken !== null) {
-                navigation.navigate('Main');
+                navigation.navigate('DrawerNav');
             }else {
                 
             }

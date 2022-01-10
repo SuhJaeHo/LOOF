@@ -2,9 +2,9 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import DrawerNav from './drawer';
 import Splash from '../src/Auth/Splash';
 import LoginScreen from '../src/Auth/Login';
-import MainScreen from '../src/Main';
 import LocationSearchScreen from '../src/LocationSearch';
 
 const Stack = createStackNavigator();
@@ -24,8 +24,8 @@ const Router = () => {
                     options={{headerShown: false}}                 
                 />
                 <Stack.Screen 
-                    name="Main"
-                    component={MainScreen}
+                    name="DrawerNav"
+                    component={DrawerNav}
                     options={{headerShown: false}}                 
                 />
                 <Stack.Screen 
