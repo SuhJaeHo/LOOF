@@ -32,26 +32,29 @@ const MainScreen = ({ route, navigation }) => {
         }), error => console.log(error));       
     }
 
-    onRegionChange = (reg) => {                                  
-        dispatch(updateByRegion({latitude: reg.latitude, longitude: reg.longitude, latitudeDelta: 0.015, longitudeDelta: 0.0121}));                            
+    onRegionChange = (reg, callback) => {                                          
+        dispatch(updateByRegion({latitude: reg.latitude, longitude: reg.longitude, latitudeDelta: 0.015, longitudeDelta: 0.0121}));
+        getAddress(reg);
+
+        callback();
     }
     
-    getAddress = () => {        
-        fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + region.latitude + ',' + region.longitude + '&key=' + GOOGLE_CLOUD_PLATFORM_API_KEY + '&language=ko')
+    getAddress = (reg) => {        
+        fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + reg.latitude + ',' + reg.longitude + '&key=' + GOOGLE_CLOUD_PLATFORM_API_KEY + '&language=ko')
         .then(response => response.json()) 
         .then(response => {                        
             let address = response.results[0].formatted_address.split(' ');
             address = address.slice(2).join(' ');                               
             dispatch(updateByAddress(address));
         })                                           
-        .catch(err => console.log(err));
+        .catch(err => console.log(err));            
     }      
     
     return (
         <View>                        
             <NaverMap
                 region={region}
-                onRegionChange={(reg) => onRegionChange(reg, getAddress())}        
+                onRegionChange={(reg, callback) => onRegionChange(reg, callback)}        
                 getCurrentLocation={() => getCurrentLocation()}   
             />
             <TouchableOpacity                    
