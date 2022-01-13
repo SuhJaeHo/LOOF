@@ -4,6 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import MainScreen from "../src/Main";
+import SettingScreen from "../src/Sidebar/Setting";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -11,7 +12,7 @@ const Drawer = createDrawerNavigator();
 const HomeScreenStack = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Main" component={MainScreen} options={{headerShown: false}}/>            
         </Stack.Navigator>
     )
 } 
@@ -19,7 +20,8 @@ const HomeScreenStack = () => {
 const DrawerNav = () => {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Main" component={HomeScreenStack}/>
+            <Drawer.Screen name="Main" component={HomeScreenStack} />
+            <Drawer.Screen name="Setting" component={SettingScreen} />
         </Drawer.Navigator>
     )
 }

@@ -32,10 +32,10 @@ const MainScreen = ({ route, navigation }) => {
         }), error => console.log(error));       
     }
 
-    onRegionChange = (reg, callback) => {                                          
+    onRegionChange = (reg, callback) => {                                                      
         dispatch(updateByRegion({latitude: reg.latitude, longitude: reg.longitude, latitudeDelta: 0.015, longitudeDelta: 0.0121}));
-        getAddress(reg);
-
+        getAddress(reg);    
+            
         callback();
     }
     

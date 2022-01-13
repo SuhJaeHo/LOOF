@@ -1,11 +1,13 @@
-import React, {useRef} from "react";
-import { Animated } from "react-native";
+import React, { useEffect } from "react";
+import { TouchableOpacity, View, Text } from "react-native";
 
-const SettingScreen = () => {
-    const animation = useRef(new Animated.Value(1)).current;
+import LogoutBtn from "../Logout";
 
+const SettingScreen = () => {    
     return (
-        <Animated.Image></Animated.Image>
+        <View>
+            <LogoutBtn />
+        </View>
     )
 }
 
